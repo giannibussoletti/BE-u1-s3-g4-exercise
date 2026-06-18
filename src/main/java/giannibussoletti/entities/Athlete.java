@@ -20,8 +20,8 @@ public class Athlete {
     @Column(nullable = false)
     private String surname;
 
-    @OneToMany(mappedBy = "winner")
-    private List<GymnasticMatch> gymnasticMatches;
+//    @OneToMany(mappedBy = "winner")
+//    private List<GymnasticMatch> gymnasticMatches;
 
 
     protected Athlete() {

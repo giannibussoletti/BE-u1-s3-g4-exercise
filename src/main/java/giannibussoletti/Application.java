@@ -12,6 +12,8 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Application {
 
@@ -25,25 +27,26 @@ public class Application {
         ParticipationDAO parDAO = new ParticipationDAO(em);
         AthleteDAO athleteDAO = new AthleteDAO(em);
 
-//        Concert concertCaparezza = new Concert("Concerto Caparezza", LocalDate.of(2026,6,26),"Concerto di Caparezza", EventType.PUBLIC,5000, ConcertGenre.ROCK,true);
-//        Concert concertNegrita = new Concert("Concerto Negrita", LocalDate.of(2026,10,26),"Concerto dei Negrita", EventType.PUBLIC,10000, ConcertGenre.ROCK,false);
-//        Concert concertEugenio = new Concert("Concerto Eugenio", LocalDate.of(2026,11,2),"Concerto dei Eugenio in via di giocia", EventType.PRIVATE,10000, ConcertGenre.POP,true);
-//        Athlete mariaCorti = new Athlete("Maria", "Corti");
-//        SoccerMatch partitaCalcio1 = new SoccerMatch("Inter-Juventus", LocalDate.of(2026,6,26),"Partita di eliminazione",EventType.PUBLIC,10000,"Inter","Juventus","Inter",3,1);
-//        SoccerMatch partitaCalcio2 = new SoccerMatch("Inter-Milan", LocalDate.of(2026,10,10),"Partita di eliminazione",EventType.PUBLIC,10000,"Inter","Milan","Inter",2,0);
-//        Athlete francescaLunghi = new Athlete("Francesca", "Lunghi");
+        Concert concertCaparezza = new Concert("Concerto Caparezza", LocalDate.of(2026,6,26),"Concerto di Caparezza", EventType.PUBLIC,5000, ConcertGenre.ROCK,true);
+        Concert concertNegrita = new Concert("Concerto Negrita", LocalDate.of(2026,10,26),"Concerto dei Negrita", EventType.PUBLIC,10000, ConcertGenre.ROCK,false);
+        Concert concertEugenio = new Concert("Concerto Eugenio", LocalDate.of(2026,11,2),"Concerto dei Eugenio in via di giocia", EventType.PRIVATE,10000, ConcertGenre.POP,true);
+        Athlete mariaCorti = new Athlete("Maria", "Corti");
+        SoccerMatch partitaCalcio1 = new SoccerMatch("Inter-Juventus", LocalDate.of(2026,6,26),"Partita di eliminazione",EventType.PUBLIC,10000,"Inter","Juventus","Inter",3,1);
+        SoccerMatch partitaCalcio2 = new SoccerMatch("Inter-Milan", LocalDate.of(2026,10,10),"Partita di eliminazione",EventType.PUBLIC,10000,"Inter","Milan","Inter",2,0);
+        Athlete francescaLunghi = new Athlete("Francesca", "Lunghi");
 //
-//        Athlete mariaFromDB = athleteDAO.findById("53b27285-818b-439c-8777-9f34f9445135");
-//        Athlete francescaFromDB = athleteDAO.findById("5762eb70-60d1-430c-bdad-291a91694c3f");
+        Athlete mariaFromDB = athleteDAO.findById("a6b1c75f-560c-41d0-ad07-02512984410d");
+        Athlete francescaFromDB = athleteDAO.findById("2e93cb58-d00e-4805-88d5-af13720fc38c");
 
+        List<Athlete> athleteList = new ArrayList<>(List.of(mariaFromDB,francescaFromDB));
 //        GymnasticMatch garaGinnastica1= new GymnasticMatch("Gara Maschile Eliminatorie Olimpiadi",LocalDate.of(2026,5,2),"Gara Eliminazione", EventType.PRIVATE,30,mariaFromDB);
 //        GymnasticMatch garaGinnastica3= new GymnasticMatch("Gara Maschile Eliminatorie Olimpiadi",LocalDate.of(2026,5,2),"Gara Eliminazione", EventType.PRIVATE,30,francescaFromDB);
-//        GymnasticMatch garaGinnastica2= new GymnasticMatch("Gara Femminile Eliminatorie Olimpiadi",LocalDate.of(2026,6,3),"Gara Eliminazione", EventType.PUBLIC,2000,mariaFromDB);
+        GymnasticMatch garaGinnastica2= new GymnasticMatch("Gara Femminile Eliminatorie Olimpiadi",LocalDate.of(2026,6,3),"Gara Eliminazione", EventType.PUBLIC,2000,mariaFromDB, athleteList);
 //        GymnasticMatch garaGinnastica4= new GymnasticMatch("Gara Femminile Eliminatorie Olimpiadi",LocalDate.of(2026,6,3),"Gara Eliminazione", EventType.PUBLIC,2000,francescaFromDB);
 //        GymnasticMatch garaGinnastica5= new GymnasticMatch("Corsa ad ostacoli",LocalDate.of(2027,6,3),"Gara Eliminazione", EventType.PUBLIC,2450,mariaFromDB);
 //        eveDAO.save(partitaCalcio1);
 //        eveDAO.save(partitaCalcio2);
-//        eveDAO.save(garaGinnastica3);
+//        eveDAO.save(garaGinnastica2);
 //        eveDAO.save(garaGinnastica5);
 
 //        eveDAO.save(concertCaparezza);
