@@ -10,15 +10,19 @@ import java.util.UUID;
 public class Athlete {
     @Id
     @GeneratedValue
-    @Column(name = "athlete_id")
+    @Column(name = "athlete_id", nullable = false)
     private UUID id;
 
-    @ManyToMany(mappedBy = "athleteList")
-    private List<GymnasticMatch> gymnasticMatchList;
+//    @ManyToMany(mappedBy = "athleteList")
+//    private List<GymnasticMatch> gymnasticMatchList;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
     private String surname;
+
+    @OneToMany(mappedBy = "winner")
+    private List<GymnasticMatch> gymnasticMatches;
+
 
     protected Athlete() {
     }
@@ -26,5 +30,14 @@ public class Athlete {
     public Athlete(String name, String surname) {
         this.name = name;
         this.surname = surname;
+    }
+
+    @Override
+    public String toString() {
+        return "Athlete{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
     }
 }

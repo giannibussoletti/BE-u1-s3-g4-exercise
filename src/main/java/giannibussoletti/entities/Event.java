@@ -10,7 +10,7 @@ import java.util.UUID;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "events")
-public class Event {
+public abstract class Event {
     @Id
     @GeneratedValue
     @Column(name = "event_id")
