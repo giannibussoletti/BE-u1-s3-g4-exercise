@@ -22,6 +22,29 @@ public class Concert extends Event {
         this.concertStreaming = concertStreaming;
     }
 
+    public ConcertGenre getConcertGenre() {
+        return concertGenre;
+    }
+
+    public void setConcertGenre(ConcertGenre concertGenre) {
+        this.concertGenre = concertGenre;
+    }
+
+    public boolean isConcertStreaming() {
+        return concertStreaming;
+    }
+
+    public void setConcertStreaming(boolean concertStreaming) {
+        this.concertStreaming = concertStreaming;
+    }
+
+    @Override
+    public String toString() {
+        return "Concert{" +
+                "concertGenre=" + concertGenre +
+                ", concertStreaming=" + concertStreaming +
+                "} " + super.toString();
+    }
 
     protected Concert() {
     }

@@ -22,17 +22,60 @@ public class SoccerMatch extends Event {
     @Column(name = "gol_away_team", nullable = false)
     private int golAwayTeam;
 
-    public SoccerMatch(String name, LocalDate date, String description, EventType eventType, int numMaxGuest, String homeTeam, String awayTeam, String winnerTeam, int golHomeTeam, int golAwayTeam) {
+    public SoccerMatch(String name, LocalDate date, String description, EventType eventType, int numMaxGuest, String homeTeam, String awayTeam) {
         super(name, date, description, eventType, numMaxGuest);
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
+    }
+
+    protected SoccerMatch() {
+    }
+
+    public String getHomeTeam() {
+        return homeTeam;
+    }
+
+    public String getAwayTeam() {
+        return awayTeam;
+    }
+
+    public void setAwayTeam(String awayTeam) {
+        this.awayTeam = awayTeam;
+    }
+
+    public String getWinnerTeam() {
+        return winnerTeam;
+    }
+
+    public void setWinnerTeam(String winnerTeam) {
         this.winnerTeam = winnerTeam;
+    }
+
+    public int getGolHomeTeam() {
+        return golHomeTeam;
+    }
+
+    public void setGolHomeTeam(int golHomeTeam) {
         this.golHomeTeam = golHomeTeam;
+    }
+
+    public int getGolAwayTeam() {
+        return golAwayTeam;
+    }
+
+    public void setGolAwayTeam(int golAwayTeam) {
         this.golAwayTeam = golAwayTeam;
     }
 
-
-    protected SoccerMatch() {
+    @Override
+    public String toString() {
+        return  super.toString() +
+                " homeTeam: " + homeTeam + '\'' +
+                ", awayTeam='" + awayTeam + '\'' +
+                ", winnerTeam='" + winnerTeam + '\'' +
+                ", golHomeTeam=" + golHomeTeam +
+                ", golAwayTeam=" + golAwayTeam +
+                "} ";
     }
 }
 

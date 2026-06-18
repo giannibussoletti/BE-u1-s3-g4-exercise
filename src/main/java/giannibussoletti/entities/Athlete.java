@@ -13,16 +13,11 @@ public class Athlete {
     @Column(name = "athlete_id", nullable = false)
     private UUID id;
 
-//    @ManyToMany(mappedBy = "athleteList")
-//    private List<GymnasticMatch> gymnasticMatchList;
     @Column(nullable = false)
     private String name;
+
     @Column(nullable = false)
     private String surname;
-
-//    @OneToMany(mappedBy = "winner")
-//    private List<GymnasticMatch> gymnasticMatches;
-
 
     protected Athlete() {
     }

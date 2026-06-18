@@ -32,9 +32,6 @@ public abstract class Event {
     @Column(name = "event_max_guest", nullable = false)
     private int numMaxGuest;
 
-    @OneToMany(mappedBy = "eventId")
-    private List<Location> locationList;
-
 
     public Event(String name, LocalDate date, String description, EventType eventType, int numMaxGuest) {
         this.name = name;
@@ -55,9 +52,7 @@ public abstract class Event {
                 ", date=" + date +
                 ", description='" + description + '\'' +
                 ", eventType=" + eventType +
-                ", numMaxGuest=" + numMaxGuest +
-                ", locationList=" + locationList +
-                '}';
+                ", numMaxGuest=" + numMaxGuest;
     }
 
     public UUID getId() {
