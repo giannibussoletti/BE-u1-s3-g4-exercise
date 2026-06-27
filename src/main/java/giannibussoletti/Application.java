@@ -16,6 +16,7 @@ public class Application {
 
     private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("beu1s3g4expu");
 
+
     public static void main(String[] args) {
         EntityManager em = emf.createEntityManager();
         EventDAO eveDAO = new EventDAO(em);
